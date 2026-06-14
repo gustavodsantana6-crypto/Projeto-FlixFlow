@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.pagina5 {
+    /* CORREÇÃO: Aspas simples na URL e ajustes na transparência do RGBA */
+    background: linear-gradient(
+        135deg,
+        rgba(20, 20, 20, 0.6), /* 60% de opacidade no início */
+        rgba(20, 20, 20, 0.9)  /* 90% de opacidade no final */
+    ), url(assets/la\ casa\ de\ papel.jpg) no-repeat center fixed; /* Mantém a imagem fixa e centralizada */
+
+    /* Mantém a imagem cobrindo toda a tela sem distorcer */
+    background-size: cover; 
+    background-position: center;
+    background-attachment: fixed; 
+    background-repeat: no-repeat;
+    
+    color: white;
+    text-align: center;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+/* 2. Cabeçalho (Header) */
+header {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(20, 20, 20, 0) 100%);
+    padding: 20px 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Título Principal (Logo) */
+header h1 {
+    color: #E50914; /* Vermelho icônico */
+    font-size: 2.8rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    cursor: default;
+    transition: transform 0.3s ease;
+}
+
+header h1:hover {
+    transform: scale(1.05); /* Leve pulso ao passar o mouse */
+}
+
+/* 3. Menu de Navegação (Nav) */
+header nav {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap; /* Ajusta os links para a linha de baixo em telas menores */
+    justify-content: center;
+    max-width: 1200px;
+}
+
+/* Links das Séries */
+header nav a {
+    color: #E5E5E5;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    border: 1px solid transparent;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Efeito Hover nos Links (Combina perfeitamente com o script de brilho) */
+header nav a:hover {
+    color: #FFFFFF;
+    background-color: rgba(229, 9, 20, 0.2); /* Fundo vermelho translúcido */
+    border-color: #E50914; /* Borda vermelha ativa */
+    transform: translateY(-3px); /* Levanta o botão de leve */
+}
+
+/* 4. Área Principal (Main) */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Mensagem de Boas-vindas */
+main p {
+    font-size: 1.5rem;
+    color: #C2C2C2;
+    max-width: 600px;
+    line-height: 1.4;
+    font-weight: 300;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Estilização extra para o botão dinâmico gerado pelo JavaScript */
+.btn-surpresa {
+    box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
+    font-family: inherit;
+}
+
+/* 5. Animação de Entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 6. Responsividade (Para celulares e tablets) */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+    
+    header nav {
+        gap: 10px;
+    }
+
+    header nav a {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+    }
+
+    main p {
+        font-size: 1.2rem;
+    }
+}
